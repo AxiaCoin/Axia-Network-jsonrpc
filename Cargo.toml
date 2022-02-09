@@ -1,0 +1,16 @@
+[workspace]
+members = [
+	"core",
+	"core-client",
+	"core-client/transports",
+	"http",
+	"ipc",
+	"derive",
+	"pubsub",
+	"pubsub/more-examples",
+	"server-utils",
+	"stdio",
+	"tcp",
+	"test",
+	"ws",
+]

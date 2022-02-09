@@ -1,0 +1,38 @@
+[package]
+authors = ["AXIA Technologies <admin@axiacoin.network>"]
+description = "Transport agnostic rust implementation of JSON-RPC 2.0 Specification."
+documentation = "https://docs.rs/jsonrpc-core/"
+edition = "2018"
+homepage = "https://github.com/axiatech/jsonrpc"
+keywords = ["jsonrpc", "json-rpc", "json", "rpc", "serde"]
+license = "MIT"
+name = "jsonrpc-core"
+repository = "https://github.com/axiatech/jsonrpc"
+version = "18.0.0"
+
+categories = [
+	"asynchronous",
+	"network-programming",
+	"web-programming::http-client",
+	"web-programming::http-server",
+	"web-programming::websocket",
+]
+
+[dependencies]
+log = "0.4"
+# FIXME: Currently a lot of jsonrpc-* crates depend on entire `futures` being
+# re-exported but it's not strictly required for this crate. Either adapt the
+# remaining crates or settle for this re-export to be a single, common dependency
+futures = { version = "0.3", optional = true }
+futures-util = { version = "0.3", default-features = false, features = ["std"] }
+futures-executor = { version = "0.3", optional = true }
+serde = "1.0"
+serde_json = "1.0"
+serde_derive = "1.0"
+
+[features]
+default = ["futures-executor", "futures"]
+arbitrary_precision = ["serde_json/arbitrary_precision"]
+
+[badges]
+travis-ci = { repository = "axiatech/jsonrpc", branch = "master"}

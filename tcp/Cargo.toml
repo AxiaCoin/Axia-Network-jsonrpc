@@ -1,0 +1,24 @@
+[package]
+authors = ["AXIA Technologies <admin@axiacoin.network>"]
+description = "TCP/IP server for JSON-RPC"
+documentation = "https://docs.rs/jsonrpc-tcp-server/"
+edition = "2018"
+homepage = "https://github.com/axiatech/jsonrpc"
+license = "MIT"
+name = "jsonrpc-tcp-server"
+repository = "https://github.com/axiatech/jsonrpc"
+version = "18.0.0"
+
+[dependencies]
+jsonrpc-core = { version = "18.0.0", path = "../core" }
+jsonrpc-server-utils = { version = "18.0.0", path = "../server-utils" }
+log = "0.4"
+parking_lot = "0.11.0"
+tower-service = "0.3"
+
+[dev-dependencies]
+lazy_static = "1.0"
+env_logger = "0.7"
+
+[badges]
+travis-ci = { repository = "axiatech/jsonrpc", branch = "master"}
